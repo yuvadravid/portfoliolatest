@@ -5,7 +5,6 @@ const adminauth = async (req, res, next) => {
     const token = req.cookies.yuva;
    const {userId} =  await jwt.verify(token,process.env.JWT_SECRET);
    const user =await User.findById(userId)
-   console.log(user)
    if(user.role != 'admin')
    {
     res.render("error", {
@@ -14,7 +13,6 @@ const adminauth = async (req, res, next) => {
    }
     next();
   } catch (error) {
-    console.log(error);
     res.render("error", {
       message: "unauthorize user",
     });

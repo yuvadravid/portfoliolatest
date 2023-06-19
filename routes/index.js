@@ -4,7 +4,7 @@ const path = require("path");
 const User = require("../model/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const crypto = require("crypto");
+const randomstring = require("randomstring");
 const nodemailer = require("nodemailer");
 const Project = require("../model/project");
 const Skill = require("../model/skill");
@@ -64,7 +64,6 @@ approuter.get("/", async (req, res) => {
     const skill = await Skill.find();
       res.render("index", { data, team, skill });
   } catch (error) {
-    console.error("Error registering user:", error);
     res.render("error", {
       message: "internal server error",
     });
@@ -112,7 +111,6 @@ approuter.post("/register", upload.single("profile"), async (req, res) => {
       message: "registered and logged successfully",
     });
   } catch (error) {
-    console.error("Error registering user:", error);
     res.render("error", {
       message: "internal server error",
     });
@@ -172,7 +170,7 @@ approuter.get("/forget-password", (req, res) => {
 // Handle password reset request
 approuter.post("/forgot-password", async (req, res) => {
   // Generate a password reset token and expiration time
-  const token = crypto.randomBytes(20).toString("hex");
+  const token = randomstring.generate();
   const expirationTime = Date.now() + 3600000; // 1 hour from now
 
   try {

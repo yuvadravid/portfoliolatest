@@ -54,7 +54,6 @@ adminrouter.post(
         message: " uploaded successfully",
       });
     } catch (error) {
-      console.error("Error registering user:", error);
       res.render("error", {
         message: "internal server error",
       });
@@ -108,7 +107,6 @@ adminrouter.get("/skill/:id", adminauth, async (req, res) => {
     });
     const data = await Skill.deleteOne({ _id: id });
   } catch (e) {
-    console.log(e);
     res.render("error", {
       message: " deleted successfully",
     });
