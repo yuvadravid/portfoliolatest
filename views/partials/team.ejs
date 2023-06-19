@@ -1,0 +1,37 @@
+<section class="body-font">
+  <div class="max-w-7xl px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="text-2xl font-medium title-font mb-4 text-cyan-600">OUR TEAM</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> we are proud to have assembled a team of highly skilled and
+        passionate individuals who are dedicated to delivering exceptional software solutions. Our team consists of
+        experienced software engineers, talented designers, meticulous quality assurance specialists, and visionary
+        project managers.</p>
+    </div>
+    <div class="flex flex-wrap justify-center items-center">
+
+      <% team.forEach(element=> { %>
+
+        <div class="p-4 lg:w-1/4 md:w-1/2 shadow w-full sm:w-[250px]">
+          <div class="h-full   flex flex-col items-center text-center overflow-hidden rounded-lg dark:bg-cyan-600 p-2 ">
+            <img alt="team"
+              class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-top hover:scale-110 transition-all mb-4"
+              src="/uploads/<%- element.profile%>">
+            <div class="w-full">
+              <h2 class="title-font font-medium text-lg text-gray-500">
+                <%= element.username %>
+              </h2>
+              <h3 class="text-gray-700 mb-3">
+                <%= element.profession %>
+              </h3>
+
+            </div>
+          </div>
+        </div>
+        <% }) %>
+
+
+
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section class=" body-font">
+  <div class="max-w-7xl px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="text-2xl font-medium title-font mb-4 text-cyan-600 tracking-widest">what can we do for you ?</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">we can do webdevelopement and app and graphics design to
+        grow your business.</p>
+    </div>
+    <div class="flex flex-wrap -m-4">
+
+      <!-- SKILL CARD -->
+
+
+      <% skill.forEach(element=> { %>
+
+
+        <div class="max-w-sm rounded overflow-hidden shadow-lg dark:bg-cyan-600">
+          <img class="w-full" src="./uploads/<%- element.banner%>" alt="<%- element.banner%>">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">
+              <h3 class="text-gray-500 mb-3">
+                <%= element.title %>
+              </h3>
+            </div>
+            <p class="text-gray-700 text-base">
+              <%= element.desc%>
+            </p>
+          </div>
+
+        </div>
+
+
+
+
+        <% }) %>
+
+
+
+
+
+    </div>
+  </div>
+</section>

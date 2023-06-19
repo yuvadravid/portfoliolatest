@@ -1,0 +1,30 @@
+<section class="body-font  ">
+    <div class="max-w-7xl px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="text-2xl font-medium title-font mb-4 text-cyan-600 ">clinet</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">there are the following clients.</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-2">
+  
+        <!-- project card -->
+  
+        <% client.forEach(element=> { %>
+            <div class="max-w-sm bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
+                <div id="header" class="flex items-center mb-4"> 
+                   <img alt="avatar" class="w-20 rounded-full border-2 border-gray-300" src="/uploads/<%- element.banner%>" />
+                   <div id="header-text" class="leading-5 ml-6 sm">
+                      <h4 id="name" class="text-xl font-semibold"><%= element.title%></h4>
+                   </div>
+                </div>
+                <div id="quote">
+                   <q class="italic text-gray-600"><%= element.desc%>.</q>
+                </div>
+             </div>
+          <% }) %>
+  
+  
+  
+  
+      </div>
+    </div>
+  </section>
